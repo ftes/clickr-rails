@@ -677,10 +677,10 @@ balena-auth@^3.0.0:
     bluebird "^3.0.0"
     jwt-decode "^2.1.0"
 
-balena-cli@^11.18.3:
-  version "11.18.3"
-  resolved "https://registry.yarnpkg.com/balena-cli/-/balena-cli-11.18.3.tgz#b6cb052cdee473ec9e55fb5c89f39d643cb8c507"
-  integrity sha512-+b3QW0GSMX2nhAordfRaGM+tiJTtbZhylTnz1peTC8OBocnryQfLWrMbFXC58aSUC/QrefHkWdL4oXhnbrWhJw==
+balena-cli@^11.19.0:
+  version "11.19.0"
+  resolved "https://registry.yarnpkg.com/balena-cli/-/balena-cli-11.19.0.tgz#1813dd83337edf9aaa9a52202b1ebf6265a881f4"
+  integrity sha512-mXTCFQMdMp31vM+UCw92Nu+RanqZu9JFsIiM6zTmTkUFVQy3SAUyCrvV4JYPk0AkDxyV1Mwp8a+RxsUaH9eVWg==
   dependencies:
     "@oclif/command" "^1.5.12"
     "@oclif/errors" "^1.2.2"
