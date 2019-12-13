@@ -677,10 +677,10 @@ balena-auth@^3.0.0:
     bluebird "^3.0.0"
     jwt-decode "^2.1.0"
 
-balena-cli@^11.19.1:
-  version "11.19.1"
-  resolved "https://registry.yarnpkg.com/balena-cli/-/balena-cli-11.19.1.tgz#ca70556888eb90d874f0135ebc82b22a69d76d51"
-  integrity sha512-39SM+yui+Kv2XzjWBvB4cBwBgG6Gsyf1kT2BD4LlpD9dglGxJ/X4undNfsC/TUtv/VWDngMqXwRWOUXyFxnzWQ==
+balena-cli@^11.20.1:
+  version "11.20.1"
+  resolved "https://registry.yarnpkg.com/balena-cli/-/balena-cli-11.20.1.tgz#de1ac81df07186dc0182f1e50b25b5609deeb3a4"
+  integrity sha512-AMKpM3c+/eYn4XnXE+MixyCa0ytTXJXkc+iXsfjCKqistF9vQSn3L4Oa0Ch34Q4/aRIJ6JWFnINfN/2Jnxfb3g==
   dependencies:
     "@oclif/command" "^1.5.12"
     "@oclif/errors" "^1.2.2"
@@ -768,7 +768,7 @@ balena-cli@^11.19.1:
     tmp "0.0.31"
     typed-error "^3.1.0"
     umount "^1.1.6"
-    unzip2 balena-io-library/node-unzip-2#v0.2.8
+    unzip2 "github:balena-io-library/node-unzip-2#v0.2.8"
     update-notifier "^2.2.0"
     window-size "^1.1.0"
   optionalDependencies:
@@ -7233,8 +7233,9 @@ unzip-stream@^0.3.0:
     binary "^0.3.0"
     mkdirp "^0.5.1"
 
-unzip2@balena-io-library/node-unzip-2#v0.2.8:
+"unzip2@github:balena-io-library/node-unzip-2#v0.2.8":
   version "0.2.8"
+  uid bcb8887500d7d82bfb60a398285397c6826618c8
   resolved "https://codeload.github.com/balena-io-library/node-unzip-2/tar.gz/bcb8887500d7d82bfb60a398285397c6826618c8"
   dependencies:
     binary "~0.3.0"
