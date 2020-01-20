@@ -677,10 +677,10 @@ balena-auth@^3.0.0:
     bluebird "^3.0.0"
     jwt-decode "^2.1.0"
 
-balena-cli@^11.20.2:
-  version "11.20.2"
-  resolved "https://registry.yarnpkg.com/balena-cli/-/balena-cli-11.20.2.tgz#53f430fcb6306027004c7ccf14caae0b1d63ffc1"
-  integrity sha512-kdIc6FRNtPdEbZPg3m3FBoZLWXdcr3URG+piReNQ3G88OzFugpkiONV7pCb3a2tdkejtLMTh/Wlj2brR9inPPw==
+balena-cli@^11.21.7:
+  version "11.21.7"
+  resolved "https://registry.yarnpkg.com/balena-cli/-/balena-cli-11.21.7.tgz#67f94b50f96df9e98d7196d97eebea52053be4f5"
+  integrity sha512-0dXMBGfWOt1hyUgjnGhmcBUL4ORWosNgPkV5KllFfnyjWY8yhmAvtqsv2JbjE8S+p9c+WV2LQC1ChdeGP1j0Vw==
   dependencies:
     "@oclif/command" "^1.5.12"
     "@oclif/errors" "^1.2.2"
@@ -770,6 +770,7 @@ balena-cli@^11.20.2:
     umount "^1.1.6"
     unzip2 "github:balena-io-library/node-unzip-2#v0.2.8"
     update-notifier "^2.2.0"
+    which "^2.0.2"
     window-size "^1.1.0"
   optionalDependencies:
     net-keepalive "^1.2.1"
@@ -7419,6 +7420,13 @@ which@^1.2.9:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/which/-/which-1.3.1.tgz#a45043d54f5805316da8d62f9f50918d3da70b0a"
   integrity sha512-HxJdYWq1MTIQbJ3nw0cqssHoTNU267KlrDuGZ1WYlxDStUtKUhOaJmh112/TZmHxxUfuJqPXSOm7tDyas0OSIQ==
+  dependencies:
+    isexe "^2.0.0"
+
+which@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/which/-/which-2.0.2.tgz#7c6a8dd0a636a0327e10b59c9286eee93f3f51b1"
+  integrity sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==
   dependencies:
     isexe "^2.0.0"
 
