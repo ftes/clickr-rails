@@ -6,7 +6,7 @@
 
 **Designed to motivate: A student response system for schools.**
 
-[**Live Demo**](https://clickr.ftes.de) (credentials: `f@ftes.de` / `password`).
+[**Live Demo**](http://clickr.ftes.de) (credentials: `f@ftes.de` / `password`).
 
 ![Clickr Diagram](docs/images/diagram_small.png)
 
@@ -14,10 +14,11 @@
 
 **For teachers:**
 - Give oral grades based on the response data, rather than a gut feeling.
-- Spend no more taking notes on student participation after or during each lesson. 
+- Spend less time taking notes on student participation after or during each lesson. 
 
 **For students:**
-- See how your participation immediately improves your oral grade.
+- Immediate visual confirmation that your participation improves your oral grade.
+- Continuously reflect on your participation.
 
 
 ## Features
@@ -39,6 +40,7 @@
 
 
 ## Getting started (clickr/web development)
+<!-- TODO Double check -->
 1. `cd services/web`
 2. `bundle install`
 3. `bundle exec rails db:create db:migrate db:seed`

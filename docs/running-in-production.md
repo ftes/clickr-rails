@@ -1,4 +1,5 @@
 # Running in production
+<!-- TODO Add more details, photos, screenshots -->
 
 ## Hardware
 - a Raspbrerry Pi
