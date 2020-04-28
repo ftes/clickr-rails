@@ -2,7 +2,7 @@
 <!-- TODO Add more details, photos, screenshots -->
 
 ## Hardware
-- a Raspbrerry Pi
+- a Raspberry Pi or similar linux-based system (compatible with balena.io)
 - a [ZStack compatible Zigbee USB adapter](https://www.zigbee2mqtt.io/information/supported_adapters.html)
 - Zigbee buttons (currently only [Ikea Tradfi remotes](https://www.ikea.com/de/de/p/tradfri-fernbedienung-30443124/) are supported)
 

@@ -32,9 +32,11 @@
 
 
 ## Tech Stack
-- **Web app:** Ruby on Rails, PostgreSQL
-- **Zigbee input adapter:** Node.js, [zigbee-herdsman](https://github.com/Koenkk/zigbee-herdsman)
-- **CI/CD:** TravisCI, heroku (cloud preview) [balena.io](https://www.balena.io/) (embedded device management)
+- **Web app:** [Ruby on Rails](https://rubyonrails.org/), [PostgreSQL](https://www.postgresql.org/)
+- **Zigbee input adapter:** [Node.js](https://nodejs.org/), [zigbee-herdsman](https://github.com/Koenkk/zigbee-herdsman)
+- **CI/CD:** [TravisCI](https://travis-ci.com/), [heroku](https://www.heroku.com/) (cloud preview) [balena.io](https://www.balena.io/) (embedded device management)
+
+<!-- TODO Generate interaction diagram from distributed dot/graphviz comments -->
 
 
 ## Getting started (clickr/web development)

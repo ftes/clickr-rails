@@ -1,3 +1,3 @@
 %h1.title= t('.title')
-= render 'form' do
+= render 'form', extended: true do
   = link_to t('common.back'), students_path, class: 'button is-danger'
