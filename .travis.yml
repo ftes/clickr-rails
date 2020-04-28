@@ -88,15 +88,15 @@ jobs:
       script:
         # Warm up docker cache
         # Pull, build and push `build` stage seperately so that it is cached
-        - docker pull ftes/clickr-rails-$SERVICE-$TRAVIS_CPU_ARCH-build || true
-        - docker pull ftes/clickr-rails-$SERVICE-$TRAVIS_CPU_ARCH || true
-        - docker build --target build -t ftes/clickr-rails-$SERVICE-$TRAVIS_CPU_ARCH-build --cache-from ftes/clickr-rails-$SERVICE-$TRAVIS_CPU_ARCH-build .
-        - docker build -t ftes/clickr-rails-$SERVICE-$TRAVIS_CPU_ARCH --cache-from ftes/clickr-rails-$SERVICE-$TRAVIS_CPU_ARCH --cache-from ftes/clickr-rails-$SERVICE-$TRAVIS_CPU_ARCH-build .
+        - docker pull ftes/clickr-$SERVICE-build || true
+        - docker pull ftes/clickr-$SERVICE || true
+        - docker build --target build -t ftes/clickr-$SERVICE-build --cache-from ftes/clickr-$SERVICE-build .
+        - docker build -t ftes/clickr-$SERVICE --cache-from ftes/clickr-$SERVICE --cache-from ftes/clickr-$SERVICE-build .
       deploy:
         on:
           branch: master
         provider: script
-        script: bash ../../bin/docker-push ftes/clickr-rails-$SERVICE-$TRAVIS_CPU_ARCH
+        script: bash ../../bin/docker-push ftes/clickr-$SERVICE
 
     # Build services/zigbee docker images
     - <<: *build-docker-image
@@ -123,8 +123,8 @@ jobs:
       stage: deploy
       language: minimal
       script:
-        - docker pull ftes/clickr-rails-web-amd64
+        - docker pull ftes/clickr-web
         - docker login --username=_ --password=$HEROKU_TOKEN registry.heroku.com
-        - docker tag ftes/clickr-rails-web-amd64 registry.heroku.com/clickr-rails/web
+        - docker tag ftes/clickr-web registry.heroku.com/clickr-rails/web
         - docker push registry.heroku.com/clickr-rails/web
-        - bin/heroku-release "`docker inspect ftes/clickr-rails-web-amd64 --format={{.Id}}`"
+        - bin/heroku-release "`docker inspect ftes/clickr-web --format={{.Id}}`"

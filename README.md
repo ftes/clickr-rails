@@ -1,7 +1,7 @@
 # Clickr
-[![Travis services/web build Status](https://travis-ci.com/ftes/clickr-rails.svg?branch=master)](https://travis-ci.com/ftes/clickr-rails)
-[![Maintainability](https://api.codeclimate.com/v1/badges/2e8f539b798959baf7e9/maintainability)](https://codeclimate.com/github/ftes/clickr-rails/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/2e8f539b798959baf7e9/test_coverage)](https://codeclimate.com/github/ftes/clickr-rails/test_coverage)
+[![Travis services/web build Status](https://travis-ci.com/ftes/clickr.svg?branch=master)](https://travis-ci.com/ftes/clickr)
+[![Maintainability](https://api.codeclimate.com/v1/badges/920d988e3507a9077561/maintainability)](https://codeclimate.com/github/ftes/clickr/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/920d988e3507a9077561/test_coverage)](https://codeclimate.com/github/ftes/clickr/test_coverage)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 **Designed to motivate: A student response system for schools.**

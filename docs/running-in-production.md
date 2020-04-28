@@ -11,7 +11,7 @@
 2. Create an `clickr` app in balena
 3. Flash the balena.io firmware, pre-configured for your `clickr` app, onto your Raspberry Pi
 4. Check the `ZSTACK_ZIGBEE_DEVICE` on balena.io: It should match the device file of your Zigbee adapter (`ls /dev/serial/by-id` on your Rasbperry Pi).
-4. `git clone https://github.com/ftes/clickr-rails && cd clickr-rails`
+4. `git clone https://github.com/ftes/clickr && cd clickr`
 5. `npm run balena:push` (probably you need to `npm run balena:login` first)
 
 ## Pair buttons
