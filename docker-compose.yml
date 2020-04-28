@@ -21,8 +21,8 @@ services:
     depends_on:
       - db
 
-  zstack-zigbee-reader:
-    build: services/zstack-zigbee-reader
+  zigbee:
+    build: services/zigbee
     privileged: true
     depends_on:
       - web

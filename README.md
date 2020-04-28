@@ -56,7 +56,7 @@
 │   └── adr
 └── services
     ├── web
-    └── zstack-zigbee-reader
+    └── zigbee
 ```
 
 

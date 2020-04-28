@@ -1,5 +1,5 @@
 {
-  "name": "@clickr/zstack-zigbee-reader",
+  "name": "@clickr/zigbee",
   "version": "1.0.0",
   "main": "src/main.js",
   "scripts": {

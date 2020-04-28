@@ -23,7 +23,7 @@ update_configs:
           update_type: "security"
 
   - package_manager: "javascript"
-    directory: "/services/zstack-zigbee-reader"
+    directory: "/services/zigbee"
     update_schedule: "live"
     allowed_updates:
       - match:
