@@ -61,6 +61,6 @@
 ## Further topics
 - [Running in production](./docs/running-in-production.md)
 - [Configuration](./docs/configuration.md)
-- [Architectural decision](./docs/adr)
+- [Architectural decisions](./docs/adr)
 - [Docker build](./docs/docker-build.md)
 - [Heroku demo](./docs/heroku.md)
