@@ -17,7 +17,7 @@
 - Spend less time taking notes on student participation after or during each lesson. 
 
 **For students:**
-- Immediate visual confirmation that your participation improves your oral grade.
+- Motivation for participation: Immediately see how your oral grade improves.
 - Continuously reflect on your participation.
 
 
@@ -27,7 +27,7 @@
 - **Question mode:** Teacher opens question response timebox, students can respond by clicking.
 - **Special merits:** Bump the student grade after outstanding responses.
 - **Lesson Evaluation:** Interactive grading, based on response average.
-- **Student grades:** Calculate overall grade based on responses in lessons.
+- **Student grades:** Calculate grade suggestion based on student's participation.
 - _Coming soon: Class list import (excel, csv)._
 - _Coming soon: Student photo support._
 - _Coming soon: "Name the student" - Learning mode for teacher using student photos._
