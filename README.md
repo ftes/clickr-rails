@@ -6,11 +6,9 @@
 
 **Designed to motivate: A student response system for schools.**
 
-[**Live Demo**](http://clickr.ftes.de) (credentials: `f@ftes.de` / `password`).
+[**Live Demo**](http://clickr.ftes.de) (credentials: `f@ftes.de` / `password`, might take ~10 seconds to start heroku dyno).
 
 ![Clickr Diagram](docs/images/diagram_small.png)
-
-<!-- TODO Add intro screencast -->
 
 **For teachers:**
 - Give oral grades based on the response data, rather than a gut feeling.
@@ -20,9 +18,9 @@
 - Motivation for participation: Immediately see how your oral grade improves.
 - Continuously reflect on your participation.
 
+![Clickr Screencast](docs/videos/screencast.gif)
 
 ## Features
-<!-- TODO Link to screencasts/screenshots -->
 - **Class and seating plan management:** Visual drag and drop editor.
 - **Question mode:** Teacher opens question response timebox, students can respond by clicking.
 - **Special merits:** Bump the student grade after outstanding responses.
