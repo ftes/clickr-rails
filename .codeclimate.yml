@@ -8,3 +8,7 @@ plugins:
     enabled: true
   editorconfig:
     enabled: true
+exclude_patterns:
+- "services/web/db/schema.rb"
+- "services/web/bin/"
+- "services/web/babel.config.js"

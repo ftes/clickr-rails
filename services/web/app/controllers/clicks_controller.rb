@@ -24,6 +24,7 @@ class ClicksController < ApplicationController
   # GET /clicks/1/edit
   def edit; end
 
+  # TODO Break down method (> 10 lines)
   # POST /clicks
   # POST /clicks.json
   def create

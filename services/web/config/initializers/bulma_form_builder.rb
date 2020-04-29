@@ -1,3 +1,4 @@
+# TODO Break down class (> 100 lines)
 # Based on https://medium.com/@dyanagi/a-bulma-form-builder-for-ruby-on-rails-applications-aef780808bab
 # Additions:
 # - Add `field`` div around input elements

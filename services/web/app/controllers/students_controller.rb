@@ -1,3 +1,4 @@
+# TODO Break down class (> 100 lines)
 class StudentsController < ApplicationController
   before_action :set_student, only: %i[edit update destroy adjust_score]
   before_action :set_student_with_includes, only: %i[show]
@@ -76,6 +77,8 @@ class StudentsController < ApplicationController
     end
   end
 
+  # TODO Break down method (> 10 lines)
+  # TODO Assignment branch condition too high
   def adjust_score
     lesson_id = params[:lesson_id]
     lesson =
