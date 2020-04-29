@@ -39,7 +39,7 @@ RSpec.describe SchoolClassesController do
         post :create,
              params: {
                school_class: { name: new_school_class.name },
-               clone_school_class: { id: old_school_class.id }
+               template: { id: old_school_class.id }
              }
       }.to change { SchoolClass.count }.by(1).and change { Student.count }.by(
                          1

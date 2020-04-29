@@ -26,7 +26,6 @@ class QuestionResponsesController < ApplicationController
   # POST /question_responses.json
   def create
     @question_response = QuestionResponse.new(question_response_params)
-    # TODO set missing data
 
     respond_to do |format|
       if @question_response.save

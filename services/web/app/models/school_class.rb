@@ -27,7 +27,6 @@ class SchoolClass < ApplicationRecord
     student_device_mappings.where(device_id: device_id).exists?
   end
 
-  # TODO Extract into task
   def suggest_creating_new_lesson?
     lesson = most_recent_lesson or return true
 
@@ -46,7 +45,6 @@ class SchoolClass < ApplicationRecord
   end
 
   def update_seats(seats)
-    # TODO exception handling
     transaction { seats.each(&(method :update_seat)) }
   end
 
@@ -55,29 +53,5 @@ class SchoolClass < ApplicationRecord
     # Bypass validation (when swapping seats, one seat is briefly occupied twice)
     student.attributes = { seat_row: seat_row, seat_col: seat_col }
     student.save! validate: false
-  end
-
-  # TODO Extract into task
-  def clone_with_students_and_device_mappings(
-    new_name: I18n.t('school_classes.cloned_name', name: name)
-  )
-    new_school_class = self.dup
-    new_school_class.name = new_name
-    new_school_class.save!
-
-    self.students.includes(:student_device_mappings).each do |student|
-      new_student = student.dup
-      new_student.school_class = new_school_class
-      new_student.save!
-
-      student.student_device_mappings.each do |mapping|
-        new_mapping = mapping.dup
-        new_mapping.school_class = new_school_class
-        new_mapping.student = new_student
-        new_mapping.save!
-      end
-    end
-
-    new_school_class
   end
 end

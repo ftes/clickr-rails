@@ -23,14 +23,11 @@ class SchoolClassesController < ApplicationController
   # POST /school_classes
   # POST /school_classes.json
   def create
-    clone_school_class =
-      SchoolClass.find_by_id(params.dig(:clone_school_class, :id))
+    template =
+      SchoolClass.find_by_id(params.dig(:template, :id))
 
-    if clone_school_class
-      @school_class =
-        clone_school_class.clone_with_students_and_device_mappings(
-          new_name: school_class_params[:name]
-        )
+    if template
+      @school_class = Clickr::Task::CloneSchoolClass.call(template, school_class_params[:name]).result
     else
       @school_class = SchoolClass.new(school_class_params)
     end

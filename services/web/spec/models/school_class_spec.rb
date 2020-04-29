@@ -57,32 +57,6 @@ RSpec.describe SchoolClass do
     end
   end
 
-  describe 'clone_with_students_and_device_mappings' do
-    it 'duplicates class with associations' do
-      old_student =
-        subject.students.create!(name: 'Max', seat_row: 1, seat_col: 1)
-      old_mapping =
-        old_student.student_device_mappings.create!(
-          device_type: 'rfid', device_id: '1', school_class: subject
-        )
-
-      new_subject = subject.clone_with_students_and_device_mappings
-      expect(new_subject.persisted?).to eq true
-
-      expect(new_subject.students.size).to eq 1
-      new_student = new_subject.students[0]
-      expect(new_student.persisted?).to eq true
-      expect(new_student.name).to eq 'Max'
-      expect(new_student.id).not_to eq old_student.id
-
-      expect(new_student.student_device_mappings.size).to eq 1
-      new_mapping = new_student.student_device_mappings[0]
-      expect(new_mapping.persisted?).to eq true
-      expect(new_mapping.id).not_to eq old_mapping.id
-      expect(new_mapping.school_class).to eq new_subject
-    end
-  end
-
   describe 'destroy' do
     it 'also destroys als associated records' do
       student = create(:student, school_class: subject)

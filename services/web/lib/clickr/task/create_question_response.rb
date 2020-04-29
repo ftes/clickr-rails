@@ -10,6 +10,7 @@ class Clickr::Task::CreateQuestionResponse
   def initialize(click, school_class)
     @click = click
     @school_class = school_class
+    @result = nil
   end
 
   def call

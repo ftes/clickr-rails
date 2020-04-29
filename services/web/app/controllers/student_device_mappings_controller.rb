@@ -26,7 +26,6 @@ class StudentDeviceMappingsController < ApplicationController
   def create
     @student_device_mapping =
       StudentDeviceMapping.new(student_device_mapping_params)
-    # TODO set missing data
 
     respond_to do |format|
       if @student_device_mapping.save

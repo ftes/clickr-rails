@@ -7,7 +7,7 @@
       %label.label{ for: :clone_school_class_id }= t('.clone_label')
       .control
         .select
-          = collection_select :clone_school_class, :id, SchoolClass.all, :id, :name, { no_field: true, prompt: t('school_classes.form.clone_prompt') }, class: 'input'
+          = collection_select :template, :id, SchoolClass.all, :id, :name, { no_field: true, prompt: t('school_classes.form.clone_prompt') }, class: 'input'
   .buttons
     = f.submit_primary t('common.save')
     = yield
