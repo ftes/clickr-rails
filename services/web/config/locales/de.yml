@@ -87,19 +87,6 @@ de:
       average_percentage: "Prozent Durchschnitt"
       number_of_questions: "Fragen"
       question_score_sum: "Punkte max."
-  seating_plans:
-    seats:
-      lesson_execution:
-        seat_student:
-          lesson_sum: "Summe für Stunde"
-          overall_sum: "Summe insgesamt"
-          nth_incomplete_mapping: "Das %{n} nächste nicht zugeordnete Gerät das gedrückt wird, wird diesem Schüler zugeordnet."
-          delete: "Löschen"
-          spam_count: "Spam Zähler (nutzlose Klicks)"
-      lesson_evaluation:
-        seat_student:
-          lesson_grade: "Note für Stunde"
-          overall_percent: "Ergebnis insgesamt: %{explanation}"
   student_device_mappings:
     create:
       notice: "Schülergerätezuordnung wurde erstellt."
@@ -150,6 +137,12 @@ de:
       stop_question_submit: "Frage beenden"
       evaluate_lesson: "Stunde auswerten"
       select_a_student: "Schüler auswählen"
+  lesson_executions_seating_plans:
+    seat_student_footer:
+      lesson_sum: "Summe für Stunde"
+      overall_sum: "Summe insgesamt"
+      nth_incomplete_mapping: "Das %{n} nächste nicht zugeordnete Gerät das gedrückt wird, wird diesem Schüler zugeordnet."
+      spam_count: "Spam Zähler (nutzlose Klicks)"
   lesson_evaluations:
     show:
       title: "Auswertung %{lesson_name}"
@@ -157,6 +150,9 @@ de:
       average_percentage_hint: "Durchschnittliche Rückmeldung in Prozent für diese Stunde für alle Schüler die teilgenommen haben"
       benchmark_initialized: "100% Niveau eingestellt auf %{benchmark}"
       benchmark_failed: "100% Niveau konnte nicht eingestellt werden"
+    seat_student:
+      lesson_grade: "Note für Stunde"
+      overall_percent: "Ergebnis insgesamt: %{explanation}"
   current_school_classes:
     update:
       notice: "Deine ausgewählte Schulklasse wurde geändert."

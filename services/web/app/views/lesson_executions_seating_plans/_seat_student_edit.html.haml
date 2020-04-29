@@ -1,0 +1,10 @@
+- footer = %w[nth_incomplete_mapping delete]
+
+.card
+  .card-content
+    = form_with model: student, class: 'has-text-centered', data: { type: :json, action: 'ajax:complete->lesson-execution#refresh' } do |f|
+      = f.text_field :name
+      = f.submit t('common.save')
+  %footer.card-footer
+    - footer.each do |partial|
+      = render "lesson_executions_seating_plans/seat_student_footer/#{partial}", student: student

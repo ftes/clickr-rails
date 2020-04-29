@@ -1,4 +1,6 @@
-class LessonExecutionsController < ApplicationController
+class LessonExecutionsSeatingPlansController < ApplicationController
+  layout false
+
   def show
     @school_class = CurrentSchoolClass.get or
       (
@@ -7,9 +9,5 @@ class LessonExecutionsController < ApplicationController
       )
     @seating_plan = Clickr::SeatingPlan.new(@school_class)
     @edit = params[:edit_seating_plan] == 'true'
-    @lesson = @school_class.most_recent_lesson_or_create
-    @question = @lesson.most_recent_question
-    @suggest_creating_new_lesson = @school_class.suggest_creating_new_lesson?
-    @default_question_name = Question.default_name(@lesson)
   end
 end

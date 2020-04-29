@@ -1,0 +1,1 @@
+= link_to '+', adjust_score_student_path(student, amount: 1), method: :post, remote: true, class: 'card-footer-item is-size-4 has-text-grey-lighter', title: t('common.increment'), data: { type: :json, action: 'ajax:success->lesson-execution#refresh' }

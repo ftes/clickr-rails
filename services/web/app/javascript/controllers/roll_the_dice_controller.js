@@ -18,15 +18,16 @@ export default class extends Controller {
   async rollTheDice() {
     const intermediateClass = 'has-background-warning'
     const finalClass = 'has-background-danger'
-    const shuffledResponses = shuffle(this.studentThatRespondedTargets)
-    const durationPerStudent = this.durationMs / shuffledResponses.length
+    const students = this.studentThatRespondedTargets.length > 0 ? this.studentThatRespondedTargets : this.studentTargets;
+    const shuffledStudents = shuffle(students)
+    const durationPerStudent = this.durationMs / shuffledStudents.length
 
     this.studentTargets.forEach(s => {
       s.classList.remove(intermediateClass, finalClass)
     })
 
-    for (const [i, student] of shuffledResponses.entries()) {
-      const isLast = i == shuffledResponses.length - 1
+    for (const [i, student] of shuffledStudents.entries()) {
+      const isLast = i == shuffledStudents.length - 1
       student.classList.add(isLast ? finalClass : intermediateClass)
       await sleep(durationPerStudent)
       student.classList.remove(intermediateClass)

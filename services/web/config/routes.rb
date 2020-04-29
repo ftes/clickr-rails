@@ -16,10 +16,14 @@ Rails.application.routes.draw do
     member { post :adjust_score }
   end
   resources :school_classes do
-    resource :seating_plan, only: %i[update show]
+    resource :seating_plan, only: %i[update], controller: :school_classes_seating_plans
   end
   resource :current_school_classes, only: %i[update]
   devise_for :users
+
+  resource :lesson_executions do
+    resource :seating_plan, only: %i[show], controller: :lesson_executions_seating_plans
+  end
 
   root 'lesson_executions#show'
 

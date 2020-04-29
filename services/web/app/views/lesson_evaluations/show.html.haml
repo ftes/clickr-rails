@@ -2,7 +2,7 @@
 - benchmark_min = 0
 - benchmark_max = @benchmark_max || 10
 - benchmark = @lesson.benchmark
-%div{ data: { controller: 'lesson-evaluation', 'lesson-evaluation-endpoint': update_benchmark_lesson_evaluate_path(@lesson) }}
+%div{ data: { controller: 'lesson-evaluation', 'lesson-evaluation-update-benchmark-endpoint': update_benchmark_lesson_evaluate_path(@lesson) }}
   .panel
     .panel-heading
       %h3.title.is-size-4
@@ -20,6 +20,6 @@
           = benchmark_max
           .tag.is-info.is-large#benchmark{ data: { target: 'lesson-evaluation.benchmarkLabel' } }
             = benchmark
-          .tag.is-success.is-large#average{ data: { target: 'lesson-evaluation.averageLabel' }, title: t('.average_percentage_hint') }
+          .tag.is-success.is-large#average{ title: t('.average_percentage_hint') }
             = percentage(@evaluation.average_percentage)
-  = render 'seating_plans/seating_plan', school_class: @school_class, seating_plan: @seating_plan, context: 'lesson_evaluation', lesson: @lesson
+  = render 'seating_plan', school_class: @school_class, seating_plan: @seating_plan

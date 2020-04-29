@@ -1,0 +1,2 @@
+= link_to student_path(student), method: :delete, remote: true, class: 'card-footer-item has-text-danger', title: t('common.destroy'), data: { type: :json, action: 'ajax:success->lesson-execution#refresh' } do
+  %i.fa.fa-trash

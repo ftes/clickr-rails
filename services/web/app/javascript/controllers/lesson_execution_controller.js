@@ -6,8 +6,12 @@ import websocketConsumer from '../channels/consumer'
 export default class extends Controller {
   static targets = ['content']
 
-  get endpoint() {
-    return this.data.get('endpoint')
+  get updateSeatingPlanEndpoint() {
+    return this.data.get('update-seating-plan-endpoint')
+  }
+
+  get getSeatingPlanEndpoint() {
+    return this.data.get('get-seating-plan-endpoint')
   }
 
   get rowOffset() {
@@ -22,10 +26,6 @@ export default class extends Controller {
     return this.data.get('school-class-id')
   }
 
-  get browserWindowId() {
-    return this.data.get('browser-window-id')
-  }
-
   connect() {
     this.subscription = websocketConsumer.subscriptions.create(
       {
@@ -35,13 +35,6 @@ export default class extends Controller {
       {
         received: ({ type, ...data }) => {
           console.debug(`Received ${type} websocket frame`, data)
-
-          if (data.browser_window_id === this.browserWindowId) {
-            console.debug(
-              `Ignoring ${type} websocket frame caused by this browser window`
-            )
-            return
-          }
 
           switch (type) {
             case 'click':
@@ -80,6 +73,12 @@ export default class extends Controller {
 
   onDragEnter(event) {
     event.preventDefault()
+  }
+
+  onDragEnd(event) {
+    this.submit({
+      students: this.getPositions(),
+    })
   }
 
   getPosition(el) {
@@ -121,26 +120,10 @@ export default class extends Controller {
     event.preventDefault()
   }
 
-  onStudentCreated(event) {
-    this.refresh()
-  }
-
-  onStudentUpdated(event) {
-    this.refresh()
-  }
-
-  onStudentDeleted(event) {
-    this.refresh()
-  }
-
-  onScoreAdjusted(event) {
-    this.refresh()
-  }
-
   refresh() {
     Rails.ajax({
       type: 'GET',
-      url: this.endpoint,
+      url: this.getSeatingPlanEndpoint,
       success: this.onSeatingPlanResponse,
     })
   }
@@ -152,7 +135,7 @@ export default class extends Controller {
 
   submit(data) {
     Rails.ajax({
-      url: this.endpoint,
+      url: this.updateSeatingPlanEndpoint,
       type: 'PUT',
       success: this.onSeatingPlanResponse,
       beforeSend(xhr, options) {
@@ -162,12 +145,6 @@ export default class extends Controller {
         options.data = JSON.stringify(data)
         return true
       },
-    })
-  }
-
-  onDragEnd(event) {
-    this.submit({
-      students: this.getPositions(),
     })
   }
 }

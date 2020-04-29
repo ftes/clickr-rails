@@ -41,12 +41,6 @@ class QuestionsController < ApplicationController
 
     respond_to do |format|
       if @question.save
-        SchoolClassChannel.broadcast_to(
-          @question.school_class,
-          type: SchoolClassChannel::QUESTION,
-          browser_window_id: params[:browser_window_id]
-        )
-
         if params[:redirect_back]
           redirect_back fallback_location: question_path(@question),
                         notice: t('.notice') and return
@@ -67,12 +61,6 @@ class QuestionsController < ApplicationController
   def update
     respond_to do |format|
       if @question.update(question_params)
-        SchoolClassChannel.broadcast_to(
-          @question.school_class,
-          type: SchoolClassChannel::QUESTION,
-          browser_window_id: params[:browser_window_id]
-        )
-
         format.html { redirect_to @question, notice: t('.notice') }
         format.json { render :show, status: :ok, location: @question }
       else
@@ -97,12 +85,6 @@ class QuestionsController < ApplicationController
   def stop
     respond_to do |format|
       if @question.update(response_allowed: false)
-        SchoolClassChannel.broadcast_to(
-          @question.school_class,
-          type: SchoolClassChannel::QUESTION,
-          browser_window_id: params[:browser_window_id]
-        )
-
         if params[:redirect_back]
           redirect_back fallback_location: question_path(@question),
                         notice: t('.notice') and return

@@ -117,19 +117,6 @@ en:
       average_percentage: "Average Percentage"
       number_of_questions: "Questions"
       question_score_sum: "Max. score"
-  seating_plans:
-    seats:
-      lesson_execution:
-        seat_student:
-          lesson_sum: "Sum for this lesson"
-          overall_sum: "Overall sum"
-          nth_incomplete_mapping: "The %{n}th next unmapped device that is clicked will be mapped to this student."
-          delete: "Delete"
-          spam_count: "Spam count (useless clicks)"
-      lesson_evaluation:
-        seat_student:
-          lesson_grade: "Lesson grade"
-          overall_percent: "Overall score: %{explanation}"
   student_device_mappings:
     create:
       notice: "Student device mapping was created."
@@ -180,6 +167,12 @@ en:
       stop_question_submit: "Stop question"
       evaluate_lesson: "Evaluate lesson"
       select_a_student: "Select a Student"
+  lesson_executions_seating_plans:
+    seat_student_footer:
+      lesson_sum: "Sum for this lesson"
+      overall_sum: "Overall sum"
+      nth_incomplete_mapping: "The %{n}th next unmapped device that is clicked will be mapped to this student."
+      spam_count: "Spam count (useless clicks)"
   lesson_evaluations:
     show:
       title: "Evaluation %{lesson_name}"
@@ -187,6 +180,9 @@ en:
       average_percentage_hint: "Average response percentage for this lesson over all students that participated"
       benchmark_initialized: "100% benchmark set to %{benchmark}"
       benchmark_failed: "Failed to set 100% benchmark"
+    seat_student:
+      lesson_grade: "Lesson grade"
+      overall_percent: "Overall score: %{explanation}"
   current_school_classes:
     update:
       notice: "Your selected school class has been updated."

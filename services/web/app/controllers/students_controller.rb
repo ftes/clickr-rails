@@ -1,7 +1,6 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: %i[edit update destroy adjust_score]
   before_action :set_student_with_includes, only: %i[show]
-  before_action :set_browser_window_id, only: :adjust_score
 
   # GET /students
   # GET /students.json
@@ -28,11 +27,6 @@ class StudentsController < ApplicationController
 
     respond_to do |format|
       if @student.save
-        SchoolClassChannel.broadcast_to(
-          @student.school_class,
-          type: SchoolClassChannel::STUDENT,
-          browser_window_id: params[:browser_window_id]
-        )
         if params[:create_incomplete_mapping]
           @student_device_mapping =
             StudentDeviceMapping.create!(
@@ -61,11 +55,6 @@ class StudentsController < ApplicationController
   def update
     respond_to do |format|
       if @student.update(student_params)
-        SchoolClassChannel.broadcast_to(
-          @student.school_class,
-          type: SchoolClassChannel::STUDENT,
-          browser_window_id: params[:browser_window_id]
-        )
         format.html { redirect_to @student, notice: t('.notice') }
         format.json { render :show, status: :ok, location: @student }
       else
@@ -106,7 +95,7 @@ class StudentsController < ApplicationController
       if question_response.errors.empty?
         SchoolClassChannel.broadcast_to(
           @student.school_class,
-          type: SchoolClassChannel::CLICK, browser_window_id: @browser_window_id
+          type: SchoolClassChannel::CLICK
         )
         format.js do
           redirect_to edit_student_path(@student), notice: t('.success')
@@ -132,10 +121,6 @@ class StudentsController < ApplicationController
 
   def set_student_with_includes
     @student = Student.includes(:school_class).find(params[:id])
-  end
-
-  def set_browser_window_id
-    @browser_window_id = params[:browser_window_id]
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
