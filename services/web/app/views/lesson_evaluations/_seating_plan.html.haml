@@ -1,6 +1,5 @@
 - row_offset_to_base_1 = seating_plan.row_min - 1
 - col_offset_to_base_1 = seating_plan.col_min - 1
-
 .seating-plan
   - seating_plan.coordinates.each do |row, col|
     - student = seating_plan.student(row: row, col: col)

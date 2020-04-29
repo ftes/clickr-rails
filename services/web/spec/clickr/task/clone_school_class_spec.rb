@@ -2,7 +2,9 @@
 require 'rails_helper'
 
 RSpec.describe Clickr::Task::CloneSchoolClass do
-  let (:school_class) { create(:school_class) }
+  let (:school_class) do
+    create(:school_class)
+  end
 
   it 'duplicates class with students and device mappings' do
     old_student =

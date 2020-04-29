@@ -2,7 +2,6 @@
 - border = edit ? 1 : 0
 - row_offset_to_base_1 = seating_plan.row_min - 1 - border
 - col_offset_to_base_1 = seating_plan.col_min - 1 - border
-
 -# https://johnbeatty.co/2018/03/09/stimulus-js-tutorial-how-do-i-drag-and-drop-items-in-a-list/
 .lesson-execution-controller{ data: { controller: 'lesson-execution roll-the-dice',
 'lesson-execution-row-offset': row_offset_to_base_1,
@@ -19,18 +18,18 @@ action: 'dragstart->lesson-execution#onDragStart dragover->lesson-execution#onDr
       - grid_cell_style = "grid-row: #{row - row_offset_to_base_1}; grid-column: #{col - col_offset_to_base_1};"
       - if student
         .seat--student{ draggable: "#{edit}",
-          data: { 'item-id': student.id,
-            row: row,
-            col: col,
-          },
-          style: grid_cell_style }
+data: { 'item-id': student.id,
+row: row,
+col: col,
+},
+style: grid_cell_style }
           - if edit
             = render "lesson_executions_seating_plans/seat_student_edit", student: student
           - else
             = render "lesson_executions_seating_plans/seat_student", student: student
       - else
         .seat--empty{ data: { row: row, col: col },
-          onmousedown: 'setTimeout(() => this.querySelector("input[type=text]").focus(), 0)',
-          style: grid_cell_style }
+onmousedown: 'setTimeout(() => this.querySelector("input[type=text]").focus(), 0)',
+style: grid_cell_style }
           - if edit
             = render "lesson_executions_seating_plans/seat_empty_edit", school_class: school_class, row: row, col: col

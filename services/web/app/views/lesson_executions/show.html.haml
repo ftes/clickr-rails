@@ -48,7 +48,7 @@
               .field.has-addons{ title: 'Question score' }
                 .control
                   %button.field.button.is-medium{ type: 'button', data: { action: 'click->score-input#decrement', target: 'score-input.decrement' } }
-                    \-
+                    = "-" # Escaped minus \- is broken by prettier https://github.com/prettier/plugin-ruby/issues/551
                 = f.text_field :score, value: 1, size: 1, no_field: true, class: 'is-medium has-addons score-input__field has-cursor-help', data: { target: 'score-input.field' }
                 .control
                   %button.field.button.is-medium{ type: 'button', data: { action: 'click->score-input#increment' } }

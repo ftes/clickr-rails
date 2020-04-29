@@ -1,5 +1,4 @@
 - footer = %w[nth_incomplete_mapping delete]
-
 .card
   .card-content
     = form_with model: student, class: 'has-text-centered', data: { type: :json, action: 'ajax:complete->lesson-execution#refresh' } do |f|

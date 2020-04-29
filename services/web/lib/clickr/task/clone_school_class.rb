@@ -7,7 +7,10 @@ class Clickr::Task::CloneSchoolClass
     handler
   end
 
-  def initialize(school_class, new_name = I18n.t('school_classes.cloned_name', name: school_class.name))
+  def initialize(
+    school_class,
+    new_name = I18n.t('school_classes.cloned_name', name: school_class.name)
+  )
     @school_class = school_class
     @new_name = new_name
     @result = nil
@@ -21,7 +24,8 @@ class Clickr::Task::CloneSchoolClass
       new_school_class.name = @new_name
       new_school_class.save!
 
-      @school_class.students.includes(:student_device_mappings).each do |student|
+      @school_class.students.includes(:student_device_mappings)
+        .each do |student|
         new_student = student.dup
         new_student.school_class = new_school_class
         new_student.save!

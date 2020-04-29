@@ -1,5 +1,4 @@
 - footer = %w[decrement_score response_sum_current_lesson response_sum_overall nth_incomplete_mapping spam_count increment_score bonus_grade]
-
 .card
   .card-content{ class: [student.responded_to_most_recent_question && 'has-background-success'], data: { target: ['roll-the-dice.student', student.responded_to_most_recent_question && 'roll-the-dice.studentThatResponded'].compact.join(' ') } }
     = link_to edit_student_path(student) do

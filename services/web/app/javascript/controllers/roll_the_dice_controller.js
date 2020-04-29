@@ -18,7 +18,10 @@ export default class extends Controller {
   async rollTheDice() {
     const intermediateClass = 'has-background-warning'
     const finalClass = 'has-background-danger'
-    const students = this.studentThatRespondedTargets.length > 0 ? this.studentThatRespondedTargets : this.studentTargets;
+    const students =
+      this.studentThatRespondedTargets.length > 0
+        ? this.studentThatRespondedTargets
+        : this.studentTargets
     const shuffledStudents = shuffle(students)
     const durationPerStudent = this.durationMs / shuffledStudents.length
 
