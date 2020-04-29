@@ -1,8 +1,7 @@
 ###############
 # Build stage #
 ###############
-# TODO Remove -20200207 as soon as issue is fixed ("no such file or directory", https://bit.ly/2zHct7v)
-FROM balenalib/%%BALENA_ARCH%%-alpine-node:12-latest-build-20200207 as build
+FROM balenalib/%%BALENA_ARCH%%-alpine-node:12-latest-build as build
 WORKDIR /app
 
 RUN apk add --no-cache \
@@ -18,8 +17,7 @@ RUN npm ci --only=production
 #############
 # Run stage #
 #############
-# TODO Remove -20200207 as soon as issue is fixed ("no such file or directory", https://bit.ly/2zHct7v)
-FROM balenalib/%%BALENA_ARCH%%-alpine-node:12-latest-20200207
+FROM balenalib/%%BALENA_ARCH%%-alpine-node:12-latest
 WORKDIR /app
 
 COPY --from=build /app/node_modules ./node_modules
