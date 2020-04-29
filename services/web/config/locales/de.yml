@@ -128,15 +128,18 @@ de:
     show:
       select_school_class_notice: "Wähle eine Klasse aus."
       title: "Stunde %{lesson_name}"
-      create_new_lesson_text: "Die letzte Stunde scheint schon etwas her zu sein. Willst du eine neue anlegen?"
-      create_new_lesson_submit: "Stunde anlegen"
+    navbar_links:
       done_editing_seating_plan: "Bearbeitung des Sitzplans beenden"
       edit_seating_plan: "Sitzplan bearbeiten"
-      question_title: "Frage: %{question}"
-      ask_question_submit: "Frage stellen"
-      stop_question_submit: "Frage beenden"
       evaluate_lesson: "Stunde auswerten"
       select_a_student: "Schüler auswählen"
+    create_lesson:
+      text: "Die letzte Stunde scheint schon etwas her zu sein. Willst du eine neue anlegen?"
+      submit: "Stunde anlegen"
+    question_stop:
+      submit: "Frage beenden"
+    question_start:
+      submit: "Frage stellen"
   lesson_executions_seating_plans:
     seat_student_footer:
       lesson_sum: "Summe für Stunde"

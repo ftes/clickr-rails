@@ -1,0 +1,9 @@
+.notification.is-warning
+  = t('.text')
+  -# TODO Show potential errors on this page
+  = form_with model: Lesson.new, local: true, class: 'is-flex' do |f|
+    .field.is-horizontal
+      .field-body
+        = f.text_field :name, value: "#{@school_class.name} - #{I18n.l Date.today, format: :short}", class: 'is-medium'
+        = hidden_field :redirect_back, true
+        = f.submit_primary t('.submit'), class: 'is-medium'

@@ -1,0 +1,12 @@
+= link_to root_path(edit_seating_plan: !@edit), class: 'navbar-item' do
+  .icon
+    = icon('fas', 'edit')
+  %span= t(@edit ? '.done_editing_seating_plan' : '.edit_seating_plan')
+= link_to lesson_evaluate_path(@lesson), class: 'navbar-item' do
+  .icon
+    = icon('fas', 'chart-bar')
+  %span= t('.evaluate_lesson')
+%a.navbar-item#rollTheDiceButton
+  .icon
+    = icon('fas', 'dice')
+  %span= t('.select_a_student')

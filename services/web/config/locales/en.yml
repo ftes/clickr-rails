@@ -157,16 +157,18 @@ en:
   lesson_executions:
     show:
       select_school_class_notice: "Select a class."
-      title: "Lesson %{lesson_name}"
-      create_new_lesson_text: "The last lesson seems to be quite old. Do you want to create a new one?"
-      create_new_lesson_submit: "Create lesson"
+    navbar_links:
       done_editing_seating_plan: "Done editing seating plan"
       edit_seating_plan: "Edit seating plan"
-      question_title: "Question: %{question}"
-      ask_question_submit: "Ask question"
-      stop_question_submit: "Stop question"
       evaluate_lesson: "Evaluate lesson"
       select_a_student: "Select a Student"
+    create_lesson:
+      text: "The last lesson seems to be quite old. Do you want to create a new one?"
+      submit: "Create lesson"
+    question_stop:
+      submit: "Stop question"
+    question_start:
+      submit: "Ask question"
   lesson_executions_seating_plans:
     seat_student_footer:
       lesson_sum: "Sum for this lesson"

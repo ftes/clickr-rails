@@ -1,0 +1,10 @@
+= form_with scope: :question, url: stop_question_path(@question), method: :post, local: true do |f|
+  = hidden_field :redirect_back, true
+  .field.is-horizontal
+    .field-body
+      .field
+        .title= @question.name
+      %button.button.is-primary.is-medium{ type: 'submit' }
+        %span.icon.is-small
+          %i.fas.fa-stop
+        %span= t('.submit')
