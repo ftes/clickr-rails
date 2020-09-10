@@ -37,7 +37,7 @@
           .navbar-item.has-dropdown.is-hoverable.is-right
             %a.navbar-link
               = current_school_class&.name || t('.select_a_class')
-            .navbar-dropdown
+            .navbar-dropdown.select-class-dropdown
               = link_to new_school_class_path(redirect_back: true), class: 'navbar-item', title: t('layouts.header.create_new_class') do
                 %i.fa.fa-plus-circle
               - SchoolClass.all.each do |school_class|
