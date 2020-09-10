@@ -9,7 +9,7 @@ RUN apk add --no-cache \
   g++ \
   linux-headers \
   make \
-  python
+  python3
 
 COPY package*.json ./
 RUN npm ci --only=production
