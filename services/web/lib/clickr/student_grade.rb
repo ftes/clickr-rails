@@ -3,8 +3,8 @@ class Clickr::StudentGrade
 
   def initialize(student)
     lessons = student.school_class.lessons
-    lessons_with_participation = lessons.with_participation_of student: student
-    bonus_grades = student.bonus_grades
+    lessons_with_participation = lessons.newest_first.with_participation_of student: student
+    bonus_grades = student.bonus_grades.newest_first
 
     initial_percentage =
       Rails.application.config.clickr.initial_student_response_percentage
